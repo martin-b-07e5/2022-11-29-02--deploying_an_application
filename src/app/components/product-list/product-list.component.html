@@ -1,0 +1,32 @@
+<!-- 8. Finally, to display ProductAlertsComponent as a child
+  of ProductListComponent,
+  add the <app-product-alerts> element to product-list.component.html.
+  Pass the current product as input to the component using property binding.
+https://angular.io/start#pass-data-to-a-child-component -->
+
+<h2>Products</h2>
+<div *ngFor="let product of products">
+  <hr />
+
+  <h4>
+    <a
+      [title]="product.name + ' details'"
+      [routerLink]="['/products', product.id]"
+    >
+      {{ product.name }}
+    </a>
+  </h4>
+
+  <p *ngIf="product.description">
+    <b>Description: </b> {{ product.description }}
+  </p>
+
+  <button type="button" (click)="share()">Share</button>
+
+  <!-- 8. Finally, to display ProductAlertsComponent as a child of ProductListComponent,
+    add the <app-product-alerts> element to product-list.component.html.
+    Pass the current product as input to the component using property binding. -->
+  <app-product-alerts [product]="product" (notify)="onNotify()">
+  </app-product-alerts>
+</div>
+<hr />
