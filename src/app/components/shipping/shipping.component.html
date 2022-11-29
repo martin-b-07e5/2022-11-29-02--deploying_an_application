@@ -1,9 +1,0 @@
-<!--4. Update the ShippingComponent template to display the shipping types and
- prices using the async pipe.
-https://angular.io/start/start-data#configuring-the-shippingcomponent-to-use-cartservice -->
-<h3>Shipping Prices</h3>
-
-<div class="shipping-item" *ngFor="let shipping of shippingCosts | async">
-    <span>{{ shipping.type }}</span>
-    <span>{{ shipping.price | currency }}</span>
-</div>
